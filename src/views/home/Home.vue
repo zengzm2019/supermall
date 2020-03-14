@@ -5,13 +5,34 @@
     </nav-bar>
     <home-swiper :banners="banners" />
     <recomment-view :recommends="recommends" />
+    <feature-view />
+    <tab-control :titles="['流行','新款','精选']"></tab-control>
+    <ul>
+      <li>列表</li>
+      <li>列表</li>
+      <li>列表</li>
+
+      <li>列表</li>
+      <li>列表</li>
+
+      <li>列表</li>
+      <li>列表</li>
+      <li>列表</li>
+      <li>列表</li>
+      <li>列表</li>
+      <li>列表</li>
+      <li>列表</li>
+    </ul>
   </div>
 </template>
 
 <script>
-import NavBar from "components/common/navbar/NavBar";
 import HomeSwiper from "./childComp/HomeSwiper";
 import RecommentView from "./childComp/RecommentView";
+import FeatureView from "./childComp/FeatureView";
+
+import NavBar from "components/common/navbar/NavBar";
+import TabControl from "components/content/tabControl/TabControl";
 import { getHomeMultidata } from "network/home";
 
 export default {
@@ -23,9 +44,11 @@ export default {
     };
   },
   components: {
-    NavBar,
     HomeSwiper,
-    RecommentView
+    RecommentView,
+    FeatureView,
+    NavBar,
+    TabControl
   },
   created() {
     getHomeMultidata().then(res => {

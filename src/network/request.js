@@ -2,7 +2,7 @@ import axios from 'axios'
 export function request(config) {
   //创建实例
   const instance = axios.create({
-    baseURL: "http://xxx:8000/api/wh",
+    baseURL: "",
     timeout: 5000
   })
   //拦截器
